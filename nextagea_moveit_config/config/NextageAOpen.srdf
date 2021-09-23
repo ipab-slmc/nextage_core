@@ -160,4 +160,17 @@
     <disable_collisions link1="WAIST" link2="nextage_base" reason="Adjacent" />
     <disable_collisions link1="WAIST" link2="nextagea_realsense_link" reason="Never" />
     <disable_collisions link1="nextage_base" link2="nextagea_realsense_link" reason="Never" />
+
+    <disable_collisions link1="RARM_JOINT4_Link" link2="RGRIPPER" reason="Adjacent" />
+    <disable_collisions link1="RARM_JOINT4_Link_cables" link2="RGRIPPER" reason="Adjacent" />
+    <disable_collisions link1="RARM_JOINT5_Link" link2="RGRIPPER" reason="Adjacent" />
+    <disable_collisions link1="left_1_distal" link2="left_1_proximal" reason="Adjacent" />
+    <disable_collisions link1="left_1_proximal" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_2_distal" link2="left_2_proximal" reason="Adjacent" />
+    <disable_collisions link1="left_2_proximal" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_3_distal" link2="left_3_proximal" reason="Adjacent" />
+    <disable_collisions link1="left_3_proximal" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_4_distal" link2="left_4_proximal" reason="Adjacent" />
+    <disable_collisions link1="left_4_proximal" link2="left_palm" reason="Adjacent" />
+    <disable_collisions link1="left_palm" link2="left_thumb_rotor" reason="Adjacent" />
 </robot>
