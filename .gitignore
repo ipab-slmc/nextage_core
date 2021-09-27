@@ -1,2 +1,3 @@
 .catkin_workspace
 *.orig
+urdf/*.urdf
