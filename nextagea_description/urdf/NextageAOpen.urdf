@@ -689,27 +689,27 @@
   </transmission>
   <link name="REND_EFFECTOR">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.135"/>
       <geometry>
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
       <material name ="Grey"/>
     </visual>
     <visual>
-      <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
+      <origin rpy="3.14159 0 0" xyz="0 0 -0.155"/>
       <geometry>
         <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name ="Grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.135"/>
       <geometry>
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
     </collision>
     <collision>
-        <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
+        <origin rpy="3.14159 0 0" xyz="0 0 -0.155"/>
         <geometry>
             <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
         </geometry>
@@ -718,26 +718,26 @@
   </link>
   <link name="LEND_EFFECTOR">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.135"/>
       <geometry>
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
     </visual>
     <visual>
-      <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
+      <origin rpy="3.14159 0 0" xyz="0 0 -0.155"/>
       <geometry>
         <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name ="Grey"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.02"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.135"/>
       <geometry>
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
     </collision>
     <collision>
-        <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
+        <origin rpy="3.14159 0 0" xyz="0 0 -0.155"/>
         <geometry>
             <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
         </geometry>
@@ -907,7 +907,7 @@
   <joint name="LARM_JOINT6" type="fixed">
     <parent link="LARM_JOINT5_Link"/>
     <child link="LEND_EFFECTOR"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.115"/>
   </joint>
   <joint name="RARM_JOINT0" type="revolute">
     <parent link="CHEST_JOINT0_Link"/>
@@ -1016,7 +1016,7 @@
   <joint name="RARM_JOINT6" type="fixed">
     <parent link="RARM_JOINT5_Link"/>
     <child link="REND_EFFECTOR"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.115"/>
   </joint>
   <!-- Gazebo-Specific Link Properties -->
   <gazebo reference="CHEST_JOINT0">
