@@ -229,7 +229,7 @@
     </collision>
     <inertial>
       <mass value="0.4"/>
-      <origin rpy="0 0.26 0" xyz="-0.05 0 0.12"/>
+      <origin rpy="0 0 0" xyz="-0.05 0 0.12"/>
       <inertia ixx="0.002054166666666667" ixy="0.0" ixz="0.0" iyy="0.0028708333333333333" iyz="0.0" izz="0.004043333333333334"/>
     </inertial>
   </link>
@@ -698,7 +698,7 @@
     <visual>
       <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
       <geometry>
-        <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name ="Grey"/>
     </visual>
@@ -708,15 +708,14 @@
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
     </collision>
-    <collision>
-        <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
-        <geometry>
-            <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-        <material name ="Grey"/>
-    </collision>
   </link>
   <link name="REND_EFFECTOR_finger">
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <sphere radius="0.0125"/>
+        </geometry>
+    </collision>
   </link>
   <link name="LEND_EFFECTOR">
     <visual>
@@ -728,7 +727,7 @@
     <visual>
       <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
       <geometry>
-        <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly_simplified.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name ="Grey"/>
     </visual>
@@ -738,15 +737,14 @@
           <cylinder length="0.04" radius="0.035"/>
       </geometry>
     </collision>
-    <collision>
-        <origin rpy="3.14159 0 0" xyz="0 0 -0.04"/>
-        <geometry>
-            <mesh filename="package://nextagea_description/urdf/meshes/end_effector-Assembly.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-        <material name ="Grey"/>
-    </collision>
   </link>
   <link name="LEND_EFFECTOR_finger">
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+            <sphere radius="0.0125"/>
+        </geometry>
+    </collision>
   </link>
   <joint name="CHEST_JOINT0" type="revolute">
     <parent link="WAIST"/>
@@ -916,7 +914,7 @@
   <joint name="LARM_JOINT7" type="fixed">
     <parent link="LEND_EFFECTOR"/>
     <child link="LEND_EFFECTOR_finger"/>
-    <origin rpy="0 0 0" xyz="0 0 0.115"/>
+    <origin rpy="0 0 0" xyz="-0.02 0 -0.115"/>
   </joint>
   <joint name="RARM_JOINT0" type="revolute">
     <parent link="CHEST_JOINT0_Link"/>
@@ -1030,7 +1028,7 @@
   <joint name="RARM_JOINT7" type="fixed">
     <parent link="REND_EFFECTOR"/>
     <child link="REND_EFFECTOR_finger"/>
-    <origin rpy="0 0 0" xyz="0 0 0.115"/>
+    <origin rpy="0 0 0" xyz="-0.02 0 -0.115"/>
   </joint>
   <!-- Gazebo-Specific Link Properties -->
   <gazebo reference="CHEST_JOINT0">
