@@ -475,7 +475,7 @@
   </link>
 
   <xacro:transmission_nx_joint name="CHEST_JOINT0" />
-  <joint name="CHEST_JOINT0" type="revolute">
+  <joint name="CHEST_JOINT0" type="fixed">
     <parent link="WAIST"/>
     <child link="CHEST_JOINT0_Link"/>
     <origin xyz="0 0 0.267" rpy="0 0 0"/>
@@ -485,7 +485,7 @@
   </joint>
 
   <xacro:transmission_nx_joint name="HEAD_JOINT0" />
-  <joint name="HEAD_JOINT0" type="revolute">
+  <joint name="HEAD_JOINT0" type="fixed">
     <parent link="CHEST_JOINT0_Link"/>
     <child link="HEAD_JOINT0_Link"/>
     <origin xyz="0 0 0.302" rpy="0 0 0"/>
@@ -495,7 +495,7 @@
 
 
   <xacro:transmission_nx_joint name="HEAD_JOINT1" />
-  <joint name="HEAD_JOINT1" type="revolute">
+  <joint name="HEAD_JOINT1" type="fixed">
     <parent link="HEAD_JOINT0_Link"/>
     <child link="HEAD_JOINT1_Link"/>
     <origin xyz="0 0 0.08" rpy="0 0 0"/>
@@ -505,7 +505,7 @@
 
 
   <xacro:transmission_nx_joint name="LARM_JOINT0" />
-  <joint name="LARM_JOINT0" type="revolute">
+  <joint name="LARM_JOINT0" type="fixed">
     <parent link="CHEST_JOINT0_Link"/>
     <child link="LARM_JOINT0_Link"/>
     <origin xyz="0.04 0.135 0.1015" rpy="0 0 0"/>
@@ -515,7 +515,7 @@
   </joint>
 
   <xacro:transmission_nx_joint name="LARM_JOINT1" />
-  <joint name="LARM_JOINT1" type="revolute">
+  <joint name="LARM_JOINT1" type="fixed">
     <parent link="LARM_JOINT0_Link"/>
     <child link="LARM_JOINT1_Link"/>
     <origin xyz="0 0 0.066" rpy="0 0 0"/>
@@ -526,7 +526,7 @@
 
 
   <xacro:transmission_nx_joint name="LARM_JOINT2" />
-  <joint name="LARM_JOINT2" type="revolute">
+  <joint name="LARM_JOINT2" type="fixed">
     <parent link="LARM_JOINT1_Link"/>
     <child link="LARM_JOINT2_Link"/>
     <origin xyz="0 0.095 -0.25" rpy="0 0 0"/>
@@ -537,7 +537,7 @@
 
 
   <xacro:transmission_nx_joint name="LARM_JOINT3" />
-  <joint name="LARM_JOINT3" type="revolute">
+  <joint name="LARM_JOINT3" type="fixed">
     <parent link="LARM_JOINT2_Link"/>
     <child link="LARM_JOINT3_Link"/>
     <origin xyz="0.1805 0 -0.03" rpy="0 0 0"/>
@@ -547,7 +547,7 @@
   </joint>
 
   <xacro:transmission_nx_joint name="LARM_JOINT4" />
-  <joint name="LARM_JOINT4" type="revolute">
+  <joint name="LARM_JOINT4" type="fixed">
     <parent link="LARM_JOINT3_Link"/>
     <child link="LARM_JOINT4_Link"/>
     <origin xyz="0.1495 0 0" rpy="0 0 0"/>
@@ -558,7 +558,7 @@
 
 
   <xacro:transmission_nx_joint name="LARM_JOINT5" />
-  <joint name="LARM_JOINT5" type="revolute">
+  <joint name="LARM_JOINT5" type="fixed">
     <parent link="LARM_JOINT4_Link"/>
     <child link="LARM_JOINT5_Link"/>
     <origin xyz="0 0 -0.1335" rpy="0 0 0"/>
