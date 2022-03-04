@@ -23,8 +23,8 @@
   <xacro:arg name="fixed_base" default="true" />
   <xacro:arg name="use_hand_cameras" default="false"/>
   <xacro:arg name="use_ft_sensors" default="false"/>
-  <xacro:arg name="use_cables_right" default="true"/>
-  <xacro:arg name="use_cables_left" default="true"/>
+  <xacro:arg name="use_cables_right" default="false"/>
+  <xacro:arg name="use_cables_left" default="false"/>
 
   <xacro:macro name="nxao_camera" params="prefix parent">
     <xacro:if value="${prefix == 'L'}">
