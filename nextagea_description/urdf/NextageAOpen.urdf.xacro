@@ -21,7 +21,7 @@
   <xacro:include filename="$(find nextagea_description)/urdf/nxao_gz_camera.xacro" />
 
   <xacro:arg name="fixed_base" default="true" />
-  <xacro:arg name="use_hand_cameras" default="false"/>
+  <xacro:arg name="use_hand_cameras" default="true"/>
   <xacro:arg name="use_ft_sensors" default="false"/>
   <xacro:arg name="use_cables_right" default="false"/>
   <xacro:arg name="use_cables_left" default="false"/>
@@ -108,11 +108,11 @@
         </geometry>
       </collision>
       <!-- TODO: The inertial values are copied from ARM_JOINT5_Link. Replace with proper values. -->
-      <inertial>
-        <mass value="1.05156" />
+      <!-- <inertial>
+        <mass value="0.01" />
         <origin xyz="0.0 0.0 -0.08" rpy="0 -0 0"/>
         <inertia ixx="0.00194072" ixy="1.1e-07" ixz="-0.00042482" iyy="0.00209392" iyz="1.2e-07" izz="0.00035788"/>
-      </inertial>
+      </inertial> -->
     </link>
 
     <joint name="${prefix}ARM_ft_joint" type="fixed">
@@ -212,7 +212,7 @@
       <collision>
         <origin xyz="0 0.08 -0.1" rpy="0 0 0"/>
         <geometry>
-          <sphere radius="0.1"/>
+          <sphere radius="0.01"/>
         </geometry>
       </collision>
     </link>
@@ -236,7 +236,7 @@
       <collision>
         <origin xyz="0 -0.08 -0.1" rpy="0 0 0"/>
         <geometry>
-          <sphere radius="0.1"/>
+          <sphere radius="0.01"/>
         </geometry>
       </collision>
     </link>
