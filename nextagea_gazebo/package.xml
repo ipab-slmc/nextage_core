@@ -15,5 +15,4 @@
   <depend>nextagea_moveit_config</depend>
   <depend>ros_controllers</depend>
   <depend>realsense2_description</depend>
-  <test_depend>rostest</test_depend>
 </package>
