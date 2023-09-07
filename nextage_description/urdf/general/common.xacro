@@ -82,6 +82,12 @@
                 izz="1e-12" />
             </inertial>
             </link>
+            <link name="${camera_name}_color_frame"/>
+            <joint name="${camera_name}_color_joint" type="fixed">
+                <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+                <parent link="${camera_name}_Link" />
+                <child link="${camera_name}_color_frame" />
+            </joint>
             <gazebo reference="${camera_name}_Link">
                 <sensor type="camera" name="${camera_name}">
                     <update_rate>30.0</update_rate>
