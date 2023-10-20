@@ -45,7 +45,7 @@
         <!-- Camera gazebo plugin -->
         <!-- Properties -->
         <xacro:property name="M_PI" value="3.1415926535897931" />
-        <xacro:property name="jnt_head_camera_displacement_x" value="0.0175" />
+        <!-- <xacro:property name="jnt_head_camera_displacement_x" value="0.0175" />
         <xacro:property name="jnt_head_camera_displacement_y" value="0.0725" />
         <xacro:property name="jnt_head_camera_displacement_z" value="0.105" />
         <xacro:property name="jnt_head_camera_rot_y" value="0.25" />
@@ -54,7 +54,7 @@
         <xacro:property name="jnt_hand_camera_displacement_y" value="0.0525" />
         <xacro:property name="jnt_hand_camera_displacement_z" value="0.0" />
         <xacro:property name="jnt_hand_camera_rot_y" value="1.5708" />
-        <xacro:property name="link_hand_camera_rot_z" value="0.0" />
+        <xacro:property name="link_hand_camera_rot_z" value="0.0" /> -->
 
         <xacro:macro name="camera_joint_link_gzplugin"
         params="camera_name link_parent jnt_displacement_x jnt_displacement_y jnt_displacement_z jnt_rotation_x jnt_rotation_y jnt_rotation_z link_displacement_x link_displacement_y link_displacement_z link_rotation_x link_rotation_y link_rotation_z">
@@ -88,6 +88,75 @@
                 <parent link="${camera_name}_Link" />
                 <child link="${camera_name}_color_frame" />
             </joint>
+            <gazebo reference="${camera_name}_Link">
+                <sensor type="camera" name="${camera_name}">
+                    <update_rate>30.0</update_rate>
+                    <camera name="${camera_name}">
+                    <horizontal_fov>1.3962634</horizontal_fov>
+                    <image>
+                        <width>800</width>
+                        <height>800</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.1</near>
+                        <far>30</far>
+                    </clip>
+                    <noise>
+                        <type>gaussian</type>
+                        <!-- Noise is sampled independently per pixel on each frame. That pixel's 
+                        noise value is added to each of its color channels, which at that point lie 
+                        in the range [0,1]. -->
+                        <mean>0.0</mean>
+                        <stddev>0.007</stddev>
+                    </noise>
+                    </camera>
+                    <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>0.0</updateRate>
+                    <cameraName>${camera_name}</cameraName>
+                    <imageTopicName>image_raw</imageTopicName>
+                    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                    <frameName>${camera_name}_Link_frame</frameName>
+                    <hackBaseline>0.07</hackBaseline>
+                    <distortionK1>0.0</distortionK1>
+                    <distortionK2>0.0</distortionK2>
+                    <distortionK3>0.0</distortionK3>
+                    <distortionT1>0.0</distortionT1>
+                    <distortionT2>0.0</distortionT2>
+                    </plugin>
+                </sensor>
+            </gazebo>
+        </xacro:macro>
+
+        <xacro:macro name="camera_joint_link_gzplugin2"
+        params="camera_name link_parent joint_xyz joint_rpy visual_xyz:='0 0 0.02' visual_rpy:='0 0 0'">
+            <joint name="${camera_name}" type="fixed">
+                <origin xyz="${joint_xyz}" rpy="${joint_rpy}" />
+                <parent link="${link_parent}" />
+                <child link="${camera_name}_Link" />
+            </joint>
+            <link name="${camera_name}_Link">
+                <visual>
+                    <origin xyz="${visual_xyz}" rpy="${visual_rpy}" />
+                    <geometry>
+                    <cylinder length="0.01" radius="0.015" />
+                    </geometry>
+                    <material name="Blue" />
+                </visual>
+                <inertial>
+                    <origin xyz="0 0 0" rpy="0 0 0" />
+                    <mass value="1e-6" />
+                    <inertia ixx="1e-12" ixy="0.0" ixz="0.0" iyy="1e-12" iyz="0.0"
+                    izz="1e-12" />
+                </inertial>
+            </link>
+            <!-- <link name="${camera_name}_color_frame"/>
+            <joint name="${camera_name}_color_joint" type="fixed">
+                <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}" />
+                <parent link="${camera_name}_Link" />
+                <child link="${camera_name}_color_frame" />
+            </joint> -->
             <gazebo reference="${camera_name}_Link">
                 <sensor type="camera" name="${camera_name}">
                     <update_rate>30.0</update_rate>
